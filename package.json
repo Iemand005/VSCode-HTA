@@ -3,13 +3,9 @@
   "displayName": "hta",
   "description": "Adds HTA support to VSCode",
   "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.145.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [],
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["Programming Languages"],
+  "activationEvents": ["onLanguage:html"],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
