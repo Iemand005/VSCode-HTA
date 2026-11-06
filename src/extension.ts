@@ -119,7 +119,9 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.workspace.onDidSaveTextDocument(d => schedule(d, 0)),
 		vscode.workspace.onDidCloseTextDocument(d => collection.delete(d.uri)),
 		vscode.workspace.onDidChangeConfiguration(e => {
-			if (e.affectsConfiguration('hta')) vscode.workspace.textDocuments.forEach(d => schedule(d, 0));
+			if (e.affectsConfiguration('hta')) {
+				vscode.workspace.textDocuments.forEach(d => schedule(d, 0));
+			}
 		})
 	);
   vscode.workspace.textDocuments.forEach(d => schedule(d, 0));
