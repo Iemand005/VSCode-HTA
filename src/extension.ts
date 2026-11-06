@@ -39,10 +39,8 @@ function check(doc: vscode.TextDocument) {
   const virtual = norm(doc.fileName) + '.js';
   const text = extractScripts(doc.getText());
 
-  /** @type {ts.CompilerOptions} */
-  let options = { allowJs: true, checkJs: true, noEmit: true, target: ts.ScriptTarget.ES5, lib: ['lib.dom.d.ts', 'lib.es5.d.ts'] };
-  /** @type {string[]} */
-  let extra = [];
+  let options: ts.CompilerOptions = { allowJs: true, checkJs: true, noEmit: true, target: ts.ScriptTarget.ES5, lib: ['lib.dom.d.ts', 'lib.es5.d.ts'] };
+  let extra: string[] = [];
 
   const cfgPath = ts.findConfigFile(norm(path.dirname(doc.fileName)), ts.sys.fileExists, 'jsconfig.json');
   if (cfgPath) {
@@ -85,7 +83,7 @@ function check(doc: vscode.TextDocument) {
     }));
 }
 
-function schedule(/** @type {vscode.TextDocument} */ doc, delay = 600) {
+function schedule(doc: vscode.TextDocument, delay = 600) {
   const key = doc.uri.toString();
   clearTimeout(timers.get(key));
   timers.set(key, setTimeout(() => { try { check(doc); } catch (e) { console.error('[hta]', e); } }, delay));
