@@ -15,7 +15,7 @@
       }
     ],
     "html": {
-      "customData": ["./src/hta.html-data.json"]
+      "customData": ["./hta.html-data.json"]
     },
     "commands": [
       {
