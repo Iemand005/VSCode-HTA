@@ -1,0 +1,30 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "hta:application",
+      "description": "Configures the HTML Application host window (mshta.exe).",
+      "attributes": [
+        { "name": "id" },
+        { "name": "applicationname", "description": "Name of the application." },
+        { "name": "border", "values": [{"name":"thick"},{"name":"dialog"},{"name":"none"},{"name":"thin"}] },
+        { "name": "borderstyle", "values": [{"name":"normal"},{"name":"complex"},{"name":"raised"},{"name":"static"},{"name":"sunken"}] },
+        { "name": "caption", "values": [{"name":"yes"},{"name":"no"}] },
+        { "name": "contextmenu", "values": [{"name":"yes"},{"name":"no"}] },
+        { "name": "icon", "description": "Path to the .ico file." },
+        { "name": "innerborder", "values": [{"name":"yes"},{"name":"no"}] },
+        { "name": "maximizebutton", "values": [{"name":"yes"},{"name":"no"}] },
+        { "name": "minimizebutton", "values": [{"name":"yes"},{"name":"no"}] },
+        { "name": "navigable", "values": [{"name":"yes"},{"name":"no"}] },
+        { "name": "scroll", "values": [{"name":"yes"},{"name":"no"},{"name":"auto"}] },
+        { "name": "scrollflat", "values": [{"name":"yes"},{"name":"no"}] },
+        { "name": "selection", "values": [{"name":"yes"},{"name":"no"}] },
+        { "name": "showintaskbar", "values": [{"name":"yes"},{"name":"no"}] },
+        { "name": "singleinstance", "values": [{"name":"yes"},{"name":"no"}] },
+        { "name": "sysmenu", "values": [{"name":"yes"},{"name":"no"}] },
+        { "name": "version" },
+        { "name": "windowstate", "values": [{"name":"normal"},{"name":"minimize"},{"name":"maximize"}] }
+      ]
+    }
+  ]
+}
