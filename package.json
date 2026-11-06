@@ -8,6 +8,15 @@
   "activationEvents": ["onLanguage:html"],
   "main": "./dist/extension.js",
   "contributes": {
+    "languages": [
+      {
+        "id": "html",
+        "extensions": [".hta"]
+      }
+    ],
+    "html": {
+      "customData": ["./src/hta.html-data.json"]
+    },
     "commands": [
       {
         "command": "hta.helloWorld",
