@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "hta:application",
-      "description": "Configures the HTML Application host window (mshta.exe).",
+      "description": "Configures the HTML Application.",
       "attributes": [
         { "name": "id" },
         { "name": "applicationname", "description": "Name of the application." },
