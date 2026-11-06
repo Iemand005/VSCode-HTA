@@ -9,13 +9,13 @@ const SCRIPT_RE = /(<script\b[^>]*>)([\s\S]*?)(<\/script\s*>)/gi;
 /** @type {Map<string, NodeJS.Timeout>} */
 const timers = new Map();
 
-const blank = (/** @type {string} */ s) => s.replace(/[^\r\n]/g, ' ');
+const blank = (s: string) => s.replace(/[^\r\n]/g, ' ');
 
 /**
  * Keep only JS script bodies; blank everything else so offsets stay identical.
  * Skips external (src), for/event handler and VBScript blocks.
  */
-function extractScripts(/** @type {string} */ text) {
+function extractScripts(text: string) {
   let out = '', last = 0, m;
   SCRIPT_RE.lastIndex = 0;
   while ((m = SCRIPT_RE.exec(text))) {
@@ -28,14 +28,14 @@ function extractScripts(/** @type {string} */ text) {
   return out + blank(text.slice(last));
 }
 
-function check(/** @type {vscode.TextDocument} */ doc) {
+function check(doc: vscode.TextDocument) {
   if (!doc.fileName.toLowerCase().endsWith('.hta')) return;
   if (!vscode.workspace.getConfiguration('hta').get('diagnostics.enable', true)) {
     collection.delete(doc.uri);
     return;
   }
 
-  const norm = (/** @type {string} */ p) => p.replace(/\\/g, '/');
+  const norm = (p: string) => p.replace(/\\/g, '/');
   const virtual = norm(doc.fileName) + '.js';
   const text = extractScripts(doc.getText());
 
