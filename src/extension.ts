@@ -1,7 +1,8 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
-const ts = require('typescript');
+import ts from 'typescript';
+import path from 'path';
 
 const collection = vscode.languages.createDiagnosticCollection('hta');
 const SCRIPT_RE = /(<script\b[^>]*>)([\s\S]*?)(<\/script\s*>)/gi;
