@@ -29,7 +29,9 @@ function extractScripts(text: string) {
 }
 
 function check(doc: vscode.TextDocument) {
-  if (!doc.fileName.toLowerCase().endsWith('.hta')) return;
+  if (!doc.fileName.toLowerCase().endsWith('.hta')) {
+	return;
+  }
   if (!vscode.workspace.getConfiguration('hta').get('diagnostics.enable', true)) {
     collection.delete(doc.uri);
     return;
@@ -62,7 +64,9 @@ function check(doc: vscode.TextDocument) {
 
   const program = ts.createProgram([virtual, ...extra], options, host);
   const sf = program.getSourceFile(virtual);
-  if (!sf) return;
+  if (!sf) {
+	return;
+  }
 
   const diags = [...program.getSyntacticDiagnostics(sf), ...program.getSemanticDiagnostics(sf)];
   collection.set(doc.uri, diags
