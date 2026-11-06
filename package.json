@@ -1,6 +1,7 @@
 {
   "name": "hta",
   "displayName": "hta",
+  "publisher": "Lasse",
   "description": "Adds HTA support to VSCode",
   "version": "0.0.1",
   "engines": {
