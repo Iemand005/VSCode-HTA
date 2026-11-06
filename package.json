@@ -12,6 +12,10 @@
   "activationEvents": [
     "onLanguage:html"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Iemand005/VSCode-HTA"
+  },
   "main": "./dist/extension.js",
   "contributes": {
     "languages": [
